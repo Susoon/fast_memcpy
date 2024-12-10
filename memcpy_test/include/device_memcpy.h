@@ -22,4 +22,18 @@ __global__ void test_memcpyAsync(
         uint32_t size,
         uint64_t *time);
 
+#if 0
+template <typename T>
+__global__ void test_memcpy(
+        void *src,
+        uint32_t size,
+        uint64_t *time);
+
+template <typename T>
+__global__ void test_memcpyAsync(
+        void *src,
+        uint32_t size,
+        uint64_t *time);
+
+#endif
 #endif

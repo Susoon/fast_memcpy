@@ -15,4 +15,11 @@ __global__ void test_assign(
           uint32_t size,
           uint64_t *time);
 
+#if 0
+template <typename T>
+__global__ void test_assign(
+          void *src,
+          uint32_t size,
+          uint64_t *time);
+#endif
 #endif

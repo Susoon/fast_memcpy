@@ -124,3 +124,73 @@ __global__ void test_asm<uint64_t>(
     *time = end - start;
 }
 
+template <typename T>
+__global__ void test_asm(void *dst, const void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint8_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint16_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint32_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint64_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
+
+
+#if 0
+template <typename T>
+__global__ void test_asm(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    printf("[SHKIM:%s] Wrong Type!!!\n", __FUNCTION__);
+}
+
+template <>
+__global__ void test_asm<uint8_t>(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+        
+template <>
+__global__ void test_asm<uint16_t>(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+
+template <>
+__global__ void test_asm<uint32_t>(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+
+template <>
+__global__ void test_asm<uint64_t>(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+
+template <typename T>
+__global__ void test_asm(void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint8_t>(void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint16_t>(void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint32_t>(void *src, uint32_t size, uint64_t *time);
+template <>
+__global__ void test_asm<uint64_t>(void *src, uint32_t size, uint64_t *time);
+#endif
+

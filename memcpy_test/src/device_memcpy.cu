@@ -54,3 +54,26 @@ __global__ void test_memcpyAsync(
 
 template __global__ void test_memcpy<uint8_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
 template __global__ void test_memcpyAsync<uint8_t>(void *dst, const void *src, uint32_t size, uint64_t *time);
+
+#if 0
+template <typename T>
+__global__ void test_memcpy(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+
+template <typename T>
+__global__ void test_memcpyAsync(
+        void *src,
+        uint32_t size,
+        uint64_t *time)
+{
+    // Do Nothing
+}
+
+template __global__ void test_memcpy<uint8_t>(void *src, uint32_t size, uint64_t *time);
+template __global__ void test_memcpyAsync<uint8_t>(void *src, uint32_t size, uint64_t *time);
+#endif

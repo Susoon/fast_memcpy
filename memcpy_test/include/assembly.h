@@ -56,4 +56,11 @@ __global__ void test_asm(
         uint32_t size,
         uint64_t *time);
 
+#if 0
+template <typename T>
+__global__ void test_asm(
+        void *src,
+        uint32_t size,
+        uint64_t *time);
+#endif
 #endif
