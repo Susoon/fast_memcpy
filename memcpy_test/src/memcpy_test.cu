@@ -162,7 +162,7 @@ double run_test_kernel(T test_kernel, uint32_t size, uint32_t clockRate)
     cudaFree(out);
     cudaFree(d_time);
 
-    return (((double)h_time) / clockRate);
+    return (((double)h_time)  * 1e6 / clockRate);
 }
 
 int main(int argc, char **argv) {
